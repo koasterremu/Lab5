@@ -1,0 +1,23 @@
+<html lang="en">
+<head><meta charset="UTF-8"><title>Quiz</title></head>
+<body>
+  <h1>What is 2 + 2?</h1>
+  <button onclick="checkAnswer(3)">3</button>
+  <button onclick="checkAnswer(4)">4</button>
+  <button onclick="checkAnswer(5)">5</button>
+  <p id="result"></p>
+  <script src="exercise-18.js"></script>
+</body>
+</html>
+
+<!-- File: exercise-18.js -->
+function checkAnswer(answer) {
+  const result = document.getElementById("result");
+  if (answer === 4) {
+    result.innerText = "Correct!";
+    result.style.color = "green";
+  } else {
+    result.innerText = "Wrong answer.";
+    result.style.color = "red";
+  }
+}
