@@ -1,0 +1,12 @@
+<html lang="en">
+<head><meta charset="UTF-8"><title>Event Handling</title></head>
+<body>
+  <input type="text" id="inputField" placeholder="Type something...">
+  <script src="exercise-08.js"></script>
+</body>
+</html>
+
+<!-- File: exercise-08.js -->
+document.getElementById("inputField").addEventListener("input", (e) => {
+  console.log(e.target.value);
+});
