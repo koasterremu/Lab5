@@ -1,0 +1,23 @@
+<html lang="en">
+<head><meta charset="UTF-8"><title>LocalStorage</title></head>
+<body>
+  <input type="text" id="noteInput" placeholder="Write a note...">
+  <button id="saveNote">Save</button>
+  <p id="savedNote"></p>
+  <script src="exercise-15.js"></script>
+</body>
+</html>
+
+<!-- File: exercise-15.js -->
+document.getElementById("saveNote").addEventListener("click", () => {
+  const note = document.getElementById("noteInput").value;
+  localStorage.setItem("note", note);
+  document.getElementById("savedNote").innerText = "Saved: " + note;
+});
+
+window.addEventListener("load", () => {
+  const note = localStorage.getItem("note");
+  if (note) {
+    document.getElementById("savedNote").innerText = "Saved: " + note;
+  }
+});
