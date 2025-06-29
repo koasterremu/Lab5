@@ -1,0 +1,41 @@
+<html lang="en">
+<head><meta charset="UTF-8"><title>Drag and Drop</title>
+  <style>
+    #dragBox {
+      width: 100px;
+      height: 100px;
+      background-color: purple;
+      position: absolute;
+      cursor: grab;
+    }
+  </style>
+</head>
+<body>
+  <div id="dragBox"></div>
+  <script src="exercise-17.js"></script>
+</body>
+</html>
+
+<!-- File: exercise-17.js -->
+const box = document.getElementById("dragBox");
+box.addEventListener("mousedown", (e) => {
+  const shiftX = e.clientX - box.getBoundingClientRect().left;
+  const shiftY = e.clientY - box.getBoundingClientRect().top;
+
+  function moveAt(pageX, pageY) {
+    box.style.left = pageX - shiftX + "px";
+    box.style.top = pageY - shiftY + "px";
+  }
+
+  function onMouseMove(e) {
+    moveAt(e.pageX, e.pageY);
+  }
+
+  document.addEventListener("mousemove", onMouseMove);
+
+  box.onmouseup = () => {
+    document.removeEventListener("mousemove", onMouseMove);
+    box.onmouseup = null;
+  };
+});
+box.ondragstart = () => false;
