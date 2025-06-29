@@ -1,0 +1,13 @@
+<html lang="en">
+<head><meta charset="UTF-8"><title>ES6 Features</title></head>
+<body>
+  <h1>Greeting</h1>
+  <script src="exercise-10.js"></script>
+</body>
+</html>
+
+<!-- File: exercise-10.js -->
+const user = { firstName: "Kieu", lastName: "Trang" };
+const { firstName, lastName } = user;
+const greeting = `Hello, ${firstName} ${lastName}!`;
+console.log(greeting);
