@@ -1,0 +1,16 @@
+<html lang="en">
+<head><meta charset="UTF-8"><title>Clock</title></head>
+<body>
+  <h1 id="clock"></h1>
+  <script src="exercise-16.js"></script>
+</body>
+</html>
+
+<!-- File: exercise-16.js -->
+function updateClock() {
+  const now = new Date();
+  const time = now.toLocaleTimeString();
+  document.getElementById("clock").innerText = time;
+}
+setInterval(updateClock, 1000);
+updateClock();
