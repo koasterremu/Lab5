@@ -1,0 +1,13 @@
+<html lang="en">
+<head><meta charset="UTF-8"><title>DOM Manipulation</title></head>
+<body>
+  <h1 id="heading">Welcome</h1>
+  <button id="changeBtn">Change Text</button>
+  <script src="exercise-07.js"></script>
+</body>
+</html>
+
+<!-- File: exercise-07.js -->
+document.getElementById("changeBtn").addEventListener("click", () => {
+  document.getElementById("heading").innerText = "Hello, JavaScript!";
+});
